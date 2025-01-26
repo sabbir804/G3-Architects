@@ -109,8 +109,7 @@ nav{
 
 /* Team Section Start */
 .team-container{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 75px;
     margin-top: 85px;
     margin-bottom: 130px;
@@ -258,7 +257,8 @@ nav{
 }
 .sponsors-logo{
     text-align: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 155px;
 }
 .sponsors-logo img{
@@ -297,10 +297,14 @@ nav{
 /* Mobile Start */
 @media screen and (max-width:576px) {
 
+    .team-container{
+        flex-direction: column-reverse;
+        gap: 0px;
+    }
 
     /* Shared Style Start */
     /* grid */
-    .team-container, .team-img-container{
+    .team-img-container{
         grid-template-columns: repeat(1, 1fr);
     }
     /* grid */
@@ -315,6 +319,10 @@ nav{
 
 
     /* Banner Responsive Start */
+    .banner-section{
+        margin-bottom: 48px;
+    }
+    
     .nav{
         flex-direction: column;
     }
@@ -345,6 +353,9 @@ nav{
     .enjoy-section{
         flex-direction: column;
     }
+    .enjoy-card-subtitle{
+        max-width: 350px;
+    }
     .year-10 > h4{
         font-size: 3rem;
     }
@@ -366,12 +377,64 @@ nav{
 
     /* Sponsor Start */
     .sponsors-logo{
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
     }
     /* Sponsor End */
     
 }
 /* Mobile End */
+
+
+
+
+/* Tablet Start */
+@media screen and (min-width:576px) and (max-width:992px) {
+    
+    /* Shared Styles */
+    .team-text,
+    .banner-section,
+    .nav,
+    .enjoy-section,
+    .facts-section{
+        margin: 0 5%;
+    }
+    /* Shared Styles */
+
+
+    /* Team Start */
+    .team-container {
+        flex-direction: column-reverse;
+        
+    }
+    .team-img-container{
+        margin: 0 auto;
+    }
+    /* Team Start */
+
+
+    /* Enjoy Start */
+    .enjoy-section{
+        flex-direction: column;
+    }
+    .enjoy-card-subtitle{
+        max-width: 750px;
+    }
+    /* Enjoy Start */
+
+    /* Facts Start */
+    .facts-card-container{
+        gap: 5px;
+    }
+    /* Facts Start */
+
+
+    /* Sponsor Start */
+    .sponsors-logo{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    /* Sponsor Start */
+}
+/* Tablet End */
 
 
 
